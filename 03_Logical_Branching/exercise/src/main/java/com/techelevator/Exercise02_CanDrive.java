@@ -20,8 +20,12 @@ public class Exercise02_CanDrive {
     canDrive(false, true) ➔ false
     canDrive(false, false) ➔ false
      */
-    public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger) {
-        return false;
+    public boolean canDrive (boolean hasPermit, boolean withLicensedPassenger) {
+        if (hasPermit && withLicensedPassenger)  {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /*
@@ -32,10 +36,13 @@ public class Exercise02_CanDrive {
     canDrive(true, true, 22) ➔ true
     canDrive(true, true, 19) ➔ false
     canDrive(false, true, 23) ➔ false
-     */
-    public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger, int passengerAge) {
-        return false;
+     */public boolean canDrive (boolean hasPermit, boolean withLicensedPassenger, int passengerAge ){
+            return (hasPermit && withLicensedPassenger) && (passengerAge >=21);
+
     }
+
+
+
 
     /*
     If the licensed passenger is the driver's legal guardian, they only have to be 18 instead of 21.
@@ -48,6 +55,6 @@ public class Exercise02_CanDrive {
     canDrive(false, true, 23, true) ➔ false
      */
     public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger, int passengerAge, boolean isPassengerOurGuardian) {
-        return false;
+        return (hasPermit &&( withLicensedPassenger && passengerAge >=21)) ||  (hasPermit && withLicensedPassenger ) && (isPassengerOurGuardian && passengerAge >=18);
     }
 }
