@@ -1,9 +1,12 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
-public class Exercises {
+public class
+Exercises {
 
 	/*
 	 Note, for-each is preferred, and should be used when possible.
@@ -16,7 +19,10 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+        //		for (int i = 0; i < stringArray.length; i++){
+//			listOfArray.add(stringArray[i]);
+//		}
+		return new ArrayList<>(Arrays.asList(stringArray));
 	}
 
 	/*
@@ -26,7 +32,11 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] stringOfArray = new String[stringList.size()];
+		for(int i = 0; i <stringList.size(); i++){
+			stringOfArray[i]=stringList.get(i);
+		}
+		return stringOfArray;
 	}
 
 	/*
@@ -37,7 +47,14 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		List<String> listOfNo4LetterWords = new ArrayList<>();
+		for (int i = 0; i < stringArray.length; i++){
+			if(stringArray[i].length()!=4){
+				listOfNo4LetterWords.add(stringArray[i]);
+			}
+
+		}
+		return listOfNo4LetterWords;
 	}
 
 	/*
@@ -47,7 +64,11 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> newDoubleList = new ArrayList<>();
+		for(int i= 0; i < intArray.length; i++){
+			newDoubleList.add(new Double(intArray[i] / 2.0));
+		}
+		return newDoubleList;
 	}
 
 	/*
@@ -57,7 +78,13 @@ public class Exercises {
 	 findLargest( [-2, -6, -8] ) -> -2
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		int largestValue = Integer.MIN_VALUE;
+		for (int value : integerList){
+			if(value > largestValue){
+				largestValue = value;
+			}
+		}
+		return largestValue;
 	}
 
 	/*
@@ -67,7 +94,13 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		List<Integer> oddNumbers = new ArrayList<>();
+		for(Integer listOfInteger : integerArray){
+			if( listOfInteger % 2 != 0) {
+				oddNumbers.add(listOfInteger);
+			}
+		}
+		return oddNumbers;
 	}
 
 	/*
@@ -78,7 +111,13 @@ public class Exercises {
 	 foundIntTwice( [9, 9, 44, 2, 88, 9], 9) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		int moreThanTwice = 0;
+		for (int number : integerList){
+			if(number == intToFind){
+				moreThanTwice+=1;
+			}
+		}
+		return moreThanTwice>=2;
 	}
 
 	/*
@@ -94,7 +133,19 @@ public class Exercises {
 	HINT: To convert an Integer x to a String, you can use x.toString() in your code. For example, if x = 1, then x.toString() returns "1."
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		List<String> intNumbers = new ArrayList<>();
+		for (Integer numbers : integerArray){
+			if(numbers % 15 == 0){
+				intNumbers.add("FizzBuzz");
+			} else if (numbers % 5 == 0) {
+				intNumbers.add("Buzz");
+			} else if (numbers % 3 == 0) {
+				intNumbers.add("Fizz");
+			} else {
+				intNumbers.add(numbers.toString());
+			}
+		}
+		return intNumbers;
 	}
 
 	/*
@@ -107,7 +158,17 @@ public class Exercises {
      interleaveLists( [1, 2, 5, 8, 10], [4, 5, 6] )  ->  [1, 4, 2, 5, 5, 6, 8, 10]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		List<Integer> mergeList = new ArrayList<>();
+		for(int i = 0; i < listOne.size() || i <listTwo.size(); i++){
+			if(i <listOne.size()){
+
+				mergeList.add(listOne.get(i));
+			}
+			if( i <listTwo.size()){
+				mergeList.add(listTwo.get(i));
+			}
+		}
+		return mergeList;
 	}
 
 }
