@@ -161,7 +161,6 @@ Exercises {
 		List<Integer> mergeList = new ArrayList<>();
 		for(int i = 0; i < listOne.size() || i <listTwo.size(); i++){
 			if(i <listOne.size()){
-
 				mergeList.add(listOne.get(i));
 			}
 			if( i <listTwo.size()){
