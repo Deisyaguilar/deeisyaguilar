@@ -102,6 +102,7 @@ Exercises {
 		}
 		return oddNumbers;
 	}
+	/*
 
 	/*
 	 Given a List of Integers, and an int value, return true if the int value appears two or more times in
