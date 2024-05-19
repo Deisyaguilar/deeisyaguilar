@@ -1,4 +1,5 @@
 package com.techelevator;
+//
 //Instance variables
 //Attribute	         Data Type	    Get	    Set 	Description
 //typeOfFruit	       String	    X		        The type of fruit on the tree.
@@ -11,7 +12,6 @@ package com.techelevator;
 //
 //If there are enough pieces left on the tree, it "picks" the fruit and updates piecesOfFruitLeft by subtracting numberOfPiecesToRemove from it.
 //The method returns true if there were enough pieces left to pick. It returns false if no fruit was picked—that is, piecesOfFruitLeft was less than numberOfPiecesToRemove.
-
 public class FruitTree {
 
     private String typeOfFruit;
