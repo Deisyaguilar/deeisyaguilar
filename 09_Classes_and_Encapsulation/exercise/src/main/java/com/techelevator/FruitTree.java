@@ -17,7 +17,6 @@ public class FruitTree {
     private String typeOfFruit;
     private int piecesOfFruitLeft;
 
-
     public FruitTree(String typeOfFruit, int startingPieceOfFruit) {
         this.typeOfFruit = typeOfFruit;
         this.piecesOfFruitLeft = startingPieceOfFruit;
